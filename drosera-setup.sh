@@ -5,6 +5,8 @@
 RED='\e[31m'
 YELLOW='\e[33m'
 GREEN='\e[32m'
+HACKER_GREEN='\033[1;32m'
+BOLD='\e[1m'
 NC='\e[0m' # No Color
 
 # --- Utility Functions for Colored Output ---
@@ -17,11 +19,11 @@ print_warning() {
 }
 
 print_success() {
-  echo -e "${GREEN}$1${NC}"
+  echo -e "${BOLD}${GREEN}$1${NC}"
 }
 
 print_info() {
-  echo -e "$1" # Default to no color for general info, but can be changed if a specific "info" color is desired.
+  echo -e "${BOLD}${HACKER_GREEN}$1${NC}"
 }
 
 # --- Banner Method ---
@@ -33,6 +35,8 @@ MrXintro() {
   print_info "██║╚██╔╝██║██╔══██╗        ██╔██╗ "
   print_info "██║ ╚═╝ ██║██║  ██║██╗    ██╔╝ ██╗"
   print_info "╚═╝     ╚═╝╚═╝  ╚═╝╚═╝    ╚═╝  ╚═╝"
+  print_info "           Github: http://github.com/iamxlord"
+  print_info "           Twitter: http://x.com/iamxlord"
                                   
   print_info "#####################################################"
   print_info ""
@@ -153,7 +157,7 @@ deploy_environments() {
 
   # --- Get GitHub Credentials ---
   print_info ""
-  print_info "Now, let's configure your Git identity for this project."
+  print_info "Now, let's configure your Github identity for drosera."
   local github_email
   local github_username
 
